@@ -1,0 +1,297 @@
+{
+  "format": "dsh-experiment-ledger-bundle",
+  "version": 1,
+  "exportedAt": "2026-11-25T12:57:46.323Z",
+  "source": {
+    "root": ".",
+    "ledgerVersion": 1
+  },
+  "counts": {
+    "experiments": 1,
+    "runs": 5,
+    "datasets": 1,
+    "compareReports": 0
+  },
+  "experiments": [
+    {
+      "id": "exp-mww4pebn-dc9e",
+      "name": "PID tuning sample",
+      "description": "Five recorded runs from samples/datasets/pid-runs.csv; import this bundle and compare.",
+      "factors": [
+        {
+          "key": "kp",
+          "label": "kp"
+        },
+        {
+          "key": "ki",
+          "label": "ki"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "overshoot",
+          "label": "Overshoot",
+          "direction": "min",
+          "unit": "%"
+        },
+        {
+          "key": "settling",
+          "label": "Settling time",
+          "direction": "min",
+          "unit": "s"
+        },
+        {
+          "key": "square_error",
+          "label": "Squared error",
+          "direction": "min"
+        }
+      ],
+      "createdAt": 1795611465923,
+      "updatedAt": 1795611466316,
+      "runs": [
+        {
+          "id": "run-mww4pebq-6e5b",
+          "label": "kp=1 ki=0.2",
+          "status": "recorded",
+          "params": {
+            "kp": 1,
+            "ki": 0.2
+          },
+          "metrics": {
+            "overshoot": 12.5,
+            "settling": 2.4,
+            "square_error": 0.81
+          },
+          "artifacts": [],
+          "datasets": [],
+          "command": "",
+          "cwd": ".",
+          "startedAt": 1795611465926,
+          "endedAt": 1795611465926,
+          "durationMs": 0,
+          "exitCode": null,
+          "signal": null,
+          "stdout": "",
+          "stderr": "",
+          "stdoutTail": "",
+          "stderrTail": "",
+          "notes": "Sample run from samples/datasets/pid-runs.csv",
+          "executor": {
+            "kind": "manual"
+          },
+          "manifest": {
+            "command": "",
+            "cwd": ".",
+            "git": null,
+            "toolchain": {
+              "node": "v24.21.0",
+              "platform": "win32",
+              "arch": "x64"
+            },
+            "env": {},
+            "capturedAt": 1795611466008
+          }
+        },
+        {
+          "id": "run-mww4pee2-9c09",
+          "label": "kp=1.2 ki=0.2",
+          "status": "recorded",
+          "params": {
+            "kp": 1.2,
+            "ki": 0.2
+          },
+          "metrics": {
+            "overshoot": 9.8,
+            "settling": 2.2,
+            "square_error": 0.72
+          },
+          "artifacts": [],
+          "datasets": [],
+          "command": "",
+          "cwd": ".",
+          "startedAt": 1795611466010,
+          "endedAt": 1795611466010,
+          "durationMs": 0,
+          "exitCode": null,
+          "signal": null,
+          "stdout": "",
+          "stderr": "",
+          "stdoutTail": "",
+          "stderrTail": "",
+          "notes": "Sample run from samples/datasets/pid-runs.csv",
+          "executor": {
+            "kind": "manual"
+          },
+          "manifest": {
+            "command": "",
+            "cwd": ".",
+            "git": null,
+            "toolchain": {
+              "node": "v24.21.0",
+              "platform": "win32",
+              "arch": "x64"
+            },
+            "env": {},
+            "capturedAt": 1795611466080
+          }
+        },
+        {
+          "id": "run-mww4peg3-c39c",
+          "label": "kp=1.5 ki=0.2",
+          "status": "recorded",
+          "params": {
+            "kp": 1.5,
+            "ki": 0.2
+          },
+          "metrics": {
+            "overshoot": 7.4,
+            "settling": 2,
+            "square_error": 0.69
+          },
+          "artifacts": [],
+          "datasets": [],
+          "command": "",
+          "cwd": ".",
+          "startedAt": 1795611466083,
+          "endedAt": 1795611466083,
+          "durationMs": 0,
+          "exitCode": null,
+          "signal": null,
+          "stdout": "",
+          "stderr": "",
+          "stdoutTail": "",
+          "stderrTail": "",
+          "notes": "Sample run from samples/datasets/pid-runs.csv",
+          "executor": {
+            "kind": "manual"
+          },
+          "manifest": {
+            "command": "",
+            "cwd": ".",
+            "git": null,
+            "toolchain": {
+              "node": "v24.21.0",
+              "platform": "win32",
+              "arch": "x64"
+            },
+            "env": {},
+            "capturedAt": 1795611466155
+          }
+        },
+        {
+          "id": "run-mww4pei5-30a1",
+          "label": "kp=1.5 ki=0.3",
+          "status": "recorded",
+          "params": {
+            "kp": 1.5,
+            "ki": 0.3
+          },
+          "metrics": {
+            "overshoot": 6.1,
+            "settling": 1.9,
+            "square_error": 0.64
+          },
+          "artifacts": [],
+          "datasets": [],
+          "command": "",
+          "cwd": ".",
+          "startedAt": 1795611466157,
+          "endedAt": 1795611466157,
+          "durationMs": 0,
+          "exitCode": null,
+          "signal": null,
+          "stdout": "",
+          "stderr": "",
+          "stdoutTail": "",
+          "stderrTail": "",
+          "notes": "Sample run from samples/datasets/pid-runs.csv",
+          "executor": {
+            "kind": "manual"
+          },
+          "manifest": {
+            "command": "",
+            "cwd": ".",
+            "git": null,
+            "toolchain": {
+              "node": "v24.21.0",
+              "platform": "win32",
+              "arch": "x64"
+            },
+            "env": {},
+            "capturedAt": 1795611466238
+          }
+        },
+        {
+          "id": "run-mww4pekg-32a8",
+          "label": "kp=1.5 ki=0.5",
+          "status": "recorded",
+          "params": {
+            "kp": 1.5,
+            "ki": 0.5
+          },
+          "metrics": {
+            "overshoot": 5.4,
+            "settling": 1.8,
+            "square_error": 0.66
+          },
+          "artifacts": [],
+          "datasets": [],
+          "command": "",
+          "cwd": ".",
+          "startedAt": 1795611466240,
+          "endedAt": 1795611466240,
+          "durationMs": 0,
+          "exitCode": null,
+          "signal": null,
+          "stdout": "",
+          "stderr": "",
+          "stdoutTail": "",
+          "stderrTail": "",
+          "notes": "Sample run from samples/datasets/pid-runs.csv",
+          "executor": {
+            "kind": "manual"
+          },
+          "manifest": {
+            "command": "",
+            "cwd": ".",
+            "git": null,
+            "toolchain": {
+              "node": "v24.21.0",
+              "platform": "win32",
+              "arch": "x64"
+            },
+            "env": {},
+            "capturedAt": 1795611466314
+          }
+        }
+      ],
+      "conclusion": {
+        "text": "kp=1.5, ki=0.3 gives the lowest overshoot in this sample.",
+        "status": "draft",
+        "decidedBy": "sample",
+        "role": null,
+        "decidedAt": null,
+        "updatedAt": 1795611466316,
+        "signature": null,
+        "history": [
+          {
+            "status": "draft",
+            "text": "kp=1.5, ki=0.3 gives the lowest overshoot in this sample.",
+            "note": null,
+            "decidedBy": "sample",
+            "role": null,
+            "at": 1795611466316,
+            "signature": null
+          }
+        ]
+      }
+    }
+  ],
+  "datasets": [],
+  "compareReports": [],
+  "audit": {
+    "headHash": "genesis",
+    "count": 0,
+    "at": 1795611466324
+  }
+}

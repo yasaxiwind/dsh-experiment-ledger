@@ -1,0 +1,11 @@
+step	channel	value
+1	temp	21.4
+2	temp	21.6
+3	temp	21.5
+4	temp	21.9
+5	temp	22.1
+1	pressure	101.2
+2	pressure	101.4
+3	pressure	101.3
+4	pressure	101.5
+5	pressure	101.7

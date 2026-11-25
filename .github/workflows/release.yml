@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Test before publishing
+        run: npm test
+
+      - name: Check whether this version is already published
+        id: published
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          if npm view "dsh-experiment-ledger@${version}" version >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish preview to npm
+        if: steps.published.outputs.exists == 'false'
+        run: npm publish --provenance --access public --tag preview
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

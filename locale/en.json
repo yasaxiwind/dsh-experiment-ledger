@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Experiment ledger",
+    "description": "Record every run with its parameters, metrics and artifacts, then compare runs side by side.",
+    "detail": "docs/DETAIL.md"
+  }
+}

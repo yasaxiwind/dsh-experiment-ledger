@@ -1,0 +1,68 @@
+{
+  "name": "dsh-experiment-ledger",
+  "version": "0.35.0-preview.1",
+  "description": "Local-first experiment ledger for DeepSeek Harness: record every run with its parameters, metrics and artifacts, then compare runs side by side.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "experiment",
+    "ledger",
+    "eln",
+    "benchmark",
+    "metrics",
+    "reproducibility",
+    "provenance"
+  ],
+  "license": "MIT",
+  "author": "yasaxiwind",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasaxiwind/dsh-experiment-ledger.git"
+  },
+  "homepage": "https://github.com/yasaxiwind/dsh-experiment-ledger#readme",
+  "bugs": {
+    "url": "https://github.com/yasaxiwind/dsh-experiment-ledger/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "preview"
+  },
+  "type": "module",
+  "engines": {
+    "dsh": ">=0.2.2-rc.5"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "scripts": {
+    "test": "node --test test/ledger.test.mjs test/client.smoke.test.mjs test/tools.test.mjs test/compare.test.mjs test/features.test.mjs test/sweep.test.mjs test/sql.test.mjs test/routes.test.mjs"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "samples",
+    "CHANGELOG.md",
+    "LICENSE",
+    "screenshots.json",
+    "icon.svg",
+    "README.md",
+    "VERIFICATION.md"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

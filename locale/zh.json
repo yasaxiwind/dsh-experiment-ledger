@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "实验台账",
+    "description": "记录每次运行的参数、指标和产物，并把多次运行放在一起比较。",
+    "detail": "docs/DETAIL.md"
+  }
+}
