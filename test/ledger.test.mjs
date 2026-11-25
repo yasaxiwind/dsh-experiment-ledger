@@ -29,8 +29,9 @@ async function tempDir() {
 }
 
 test('resolveRoot defaults to .experiments under the cwd', () => {
-  assert.equal(resolveRoot(undefined, 'C:\\work\\project'), 'C:\\work\\project\\.experiments')
-  assert.equal(resolveRoot('ledger', 'C:\\work\\project'), 'C:\\work\\project\\ledger')
+  const base = process.platform === 'win32' ? 'C:\\work\\project' : '/work/project'
+  assert.equal(resolveRoot(undefined, base), join(base, '.experiments'))
+  assert.equal(resolveRoot('ledger', base), join(base, 'ledger'))
 })
 
 test('saveLedger and loadLedger round-trip, and a broken file is not overwritten', async () => {
