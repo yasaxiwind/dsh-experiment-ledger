@@ -19,7 +19,7 @@ Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human
 - [ ] Repository/homepage URL (no git remote is configured; add before publishing to npm/GitHub).
 - [x] Repository/homepage/bugs set to `github.com/yasaxiwind/dsh-experiment-ledger`.
 - [x] npm name `dsh-experiment-ledger` returned 404 (unclaimed) on 2026-11-25; recheck at publish time.
-- [ ] npm publish (`npm publish --tag preview`) — **blocked**: local npm token returns 401/404; GitHub Release is the current distribution channel.
+- [x] npm publish — **published** `dsh-experiment-ledger@0.35.0-preview.1` with `preview` tag; registry tarball SHA-1 matches local (`5e96a784…`).
 - [x] Tarball + folder zip + SHA-256 generated under `releases/preview-0.35.0-preview.1/`.
 - [x] Screenshots captured from an authenticated Chrome session with the DSH sidebar/session list, workspace label and user name hidden; synthetic data only.
 - [ ] Actual fresh DSH profile install (requires a separate profile/app; clean-room harness is the substitute in this environment).

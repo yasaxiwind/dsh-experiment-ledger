@@ -34,7 +34,7 @@ The screenshots use the synthetic `samples/` data. The DSH sidebar, session list
 dsh plugin --profile <profile> add dsh-experiment-ledger@preview
 ```
 
-If npm returns `404` for the preview tag, the registry publish is still pending; use the tarball/GitHub Release below.
+Published on npm as `0.35.0-preview.1` (the `preview` tag).
 
 In **DSH Desktop**: **Settings → Plugins → + Add plugin**, enter `dsh-experiment-ledger@preview`, install, enable the bundle, then reload the page.
 
