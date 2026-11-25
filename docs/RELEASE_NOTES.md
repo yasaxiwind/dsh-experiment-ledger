@@ -22,6 +22,8 @@ This is the first public preview of a **local-first experiment ledger** for Deep
 dsh plugin --profile <profile> add dsh-experiment-ledger@preview
 ```
 
+If the registry returns `404`, the npm publish is still pending; use the GitHub Release tarball below.
+
 In DSH Desktop: **Settings → Plugins → + Add plugin**, enter `dsh-experiment-ledger@preview`, install, enable, reload.
 
 ### From a tarball
