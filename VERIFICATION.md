@@ -44,10 +44,11 @@ Date: 2026-11-27 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `deskt
 | Artefact | Result |
 |---|---|
 | test suite | 79/79 pass |
-| tarball | `dsh-experiment-ledger-0.35.0-preview.2.tgz` (generated in the release step) |
+| tarball | `dsh-experiment-ledger-0.35.0-preview.2.tgz`, 45 entries |
 | folder zip | `dsh-experiment-ledger-0.35.0-preview.2.zip` |
 | checksums | `SHA256SUMS.txt` (tgz, zip, notes, checklist) |
-| clean-room | extracted tarball: 33 tools, 40 routes, sample import, run, report, 2 client slots |
+| npm | `0.35.0-preview.2`; registry SHA-1 `64088781853b88461a9c3c16a2b1b3a31007486b` matches local |
+| clean-room | extracted registry tarball: 33 tools, 40 routes, sample import, run, report, 2 client slots |
 | manual UI | **not fully re-run**; see `docs/PREVIEW_CHECKLIST.md` |
 
 The clean-room harness uses an isolated `DSH_HOME` and packed files; it is not an actual second DSH profile install.

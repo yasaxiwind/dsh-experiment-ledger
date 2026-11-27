@@ -1,10 +1,10 @@
 # Preview checklist — 0.35.0-preview.2
 
-Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human pass.
+Status as of 2026-11-27. `[x]` = done in this environment; `[ ]` = needs a human pass.
 
 ## Automated
 
-- [x] 78/78 tests (`node --test …`).
+- [x] 79/79 tests (`node --test …`).
 - [x] Host/client syntax checks.
 - [x] Route tests: roots/browse/upload import/panel request/experiment delete/run delete/report.
 - [x] Fresh-home clean-room harness against the packaged tarball: **33 tools, 40 routes, sample import, live run, HTML report, 2 client slots**.
@@ -16,10 +16,9 @@ Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human
 - [x] Version `0.35.0-preview.2`, SemVer prerelease.
 - [x] `private` removed, `publishConfig.tag = preview`.
 - [x] MIT `LICENSE` file.
-- [ ] Repository/homepage URL (no git remote is configured; add before publishing to npm/GitHub).
 - [x] Repository/homepage/bugs set to `github.com/yasaxiwind/dsh-experiment-ledger`.
 - [x] npm name `dsh-experiment-ledger` returned 404 (unclaimed) on 2026-11-25; recheck at publish time.
-- [x] npm publish — **published** `dsh-experiment-ledger@0.35.0-preview.1` with `preview` tag; registry tarball SHA-1 matches local (`5e96a784…`).
+- [x] npm publish — **published** `dsh-experiment-ledger@0.35.0-preview.2`; `latest` and `preview` both point at it; registry tarball SHA-1 matches local (`64088781…`).
 - [x] Tarball + folder zip + SHA-256 generated under `releases/preview-0.35.0-preview.2/`.
 - [x] Panel routes call `ctx.connection.requestRejection(req)`; route test rejects an admission with 403.
 - [x] Screenshots captured from an authenticated Chrome session with the DSH sidebar/session list, workspace label and user name hidden; synthetic data only.
