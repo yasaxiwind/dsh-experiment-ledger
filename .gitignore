@@ -5,4 +5,12 @@ scratch/
 browser-screenshots/
 *.tgz
 *.zip
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.secret
+*.log
+cookies*.txt
 .DS_Store
