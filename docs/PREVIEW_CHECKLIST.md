@@ -1,4 +1,4 @@
-# Preview checklist — 0.35.0-preview.1
+# Preview checklist — 0.35.0-preview.2
 
 Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human pass.
 
@@ -13,14 +13,15 @@ Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human
 
 ## Package
 
-- [x] Version `0.35.0-preview.1`, SemVer prerelease.
+- [x] Version `0.35.0-preview.2`, SemVer prerelease.
 - [x] `private` removed, `publishConfig.tag = preview`.
 - [x] MIT `LICENSE` file.
 - [ ] Repository/homepage URL (no git remote is configured; add before publishing to npm/GitHub).
 - [x] Repository/homepage/bugs set to `github.com/yasaxiwind/dsh-experiment-ledger`.
 - [x] npm name `dsh-experiment-ledger` returned 404 (unclaimed) on 2026-11-25; recheck at publish time.
 - [x] npm publish — **published** `dsh-experiment-ledger@0.35.0-preview.1` with `preview` tag; registry tarball SHA-1 matches local (`5e96a784…`).
-- [x] Tarball + folder zip + SHA-256 generated under `releases/preview-0.35.0-preview.1/`.
+- [x] Tarball + folder zip + SHA-256 generated under `releases/preview-0.35.0-preview.2/`.
+- [x] Panel routes call `ctx.connection.requestRejection(req)`; route test rejects an admission with 403.
 - [x] Screenshots captured from an authenticated Chrome session with the DSH sidebar/session list, workspace label and user name hidden; synthetic data only.
 - [ ] Actual fresh DSH profile install (requires a separate profile/app; clean-room harness is the substitute in this environment).
 
@@ -47,5 +48,5 @@ Status as of 2026-11-25. `[x]` = done in this environment; `[ ]` = needs a human
 
 ## Recommendation
 
-The artifact is ready for **local preview / GitHub Release**. Do not tag 1.0 yet; use `0.35.0-preview.1`, keep the preview tag, and collect feedback for one or two rounds.
+The artifact is ready for **local preview / GitHub Release**. Do not tag 1.0 yet; use `0.35.0-preview.2`, keep the preview tag, and collect feedback for one or two rounds.
 

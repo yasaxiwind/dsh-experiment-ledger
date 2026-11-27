@@ -1,13 +1,14 @@
-# Verification — dsh-experiment-ledger 0.35.0-preview.1
+# Verification — dsh-experiment-ledger 0.35.0-preview.2
 
-Date: 2026-11-25 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `desktop`)
+Date: 2026-11-27 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `desktop`)
 
 ## Automated tests
 
-`node --test test/ledger.test.mjs test/client.smoke.test.mjs test/tools.test.mjs test/compare.test.mjs test/features.test.mjs test/sweep.test.mjs test/sql.test.mjs test/routes.test.mjs` — **78/78 pass**.
+`node --test test/ledger.test.mjs test/client.smoke.test.mjs test/tools.test.mjs test/compare.test.mjs test/features.test.mjs test/sweep.test.mjs test/sql.test.mjs test/routes.test.mjs` — **79/79 pass**.
 
 | Area | What is covered |
 |---|---|
+| admission | every panel route calls `ctx.connection.requestRejection(req)` before reading the body; a mocked 403 stops the route with 403 |
 | panel UX | `/roots` opens/creates a ledger folder, `/browse` lists folders, upload import via base64, `/panel-request` from `exp_open` |
 | conclusion UI | in-panel draft/approve/reject modal (no `window.prompt`), editable signer name/role, decision saved through `/conclude` |
 | confirmations | in-panel confirm modal for run delete/reproduce; no native `prompt`/`confirm` calls remain |
@@ -38,13 +39,13 @@ Date: 2026-11-25 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `deskt
 - **AI should open the sidebar directly**: new `exp_open` tool sets a panel request; the client polls `/panel-request` every 2 s, docks the sidebar, selects the requested root/experiment.
 - **Sidebar layout**: **⇥/⇤** docks/floats the panel; docked mode pushes `_centerCol` right margin (data-console approach), starts below the DSH title bar, and uses `clamp(320px, 36vw, 380px)`.
 
-## Release artefacts (0.35.0-preview.1)
+## Release artefacts (0.35.0-preview.2)
 
 | Artefact | Result |
 |---|---|
-| test suite | 78/78 pass |
-| tarball | `dsh-experiment-ledger-0.35.0-preview.1.tgz`, 40 entries |
-| folder zip | `dsh-experiment-ledger-0.35.0-preview.1.zip` |
+| test suite | 79/79 pass |
+| tarball | `dsh-experiment-ledger-0.35.0-preview.2.tgz` (generated in the release step) |
+| folder zip | `dsh-experiment-ledger-0.35.0-preview.2.zip` |
 | checksums | `SHA256SUMS.txt` (tgz, zip, notes, checklist) |
 | clean-room | extracted tarball: 33 tools, 40 routes, sample import, run, report, 2 client slots |
 | manual UI | **not fully re-run**; see `docs/PREVIEW_CHECKLIST.md` |

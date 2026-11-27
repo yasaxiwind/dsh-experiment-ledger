@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/yasaxiwind/dsh-experiment-ledger)](LICENSE)
 [![CI](https://github.com/yasaxiwind/dsh-experiment-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/yasaxiwind/dsh-experiment-ledger/actions/workflows/ci.yml)
 
-**Preview 0.35.0-preview.1** · DeepSeek Harness `>= 0.2.2-rc.5`
+**Preview 0.35.0-preview.2** · DeepSeek Harness `>= 0.2.2-rc.5`
 
 Local-first experiment ledger for DeepSeek Harness: **every run keeps its parameters, metrics and artifacts, and any two runs can be compared.**
 
@@ -34,14 +34,14 @@ The screenshots use the synthetic `samples/` data. The DSH sidebar, session list
 dsh plugin --profile <profile> add dsh-experiment-ledger@preview
 ```
 
-Published on npm as `0.35.0-preview.1` (the `preview` tag).
+Published on npm as `0.35.0-preview.2` (the `preview` tag).
 
 In **DSH Desktop**: **Settings → Plugins → + Add plugin**, enter `dsh-experiment-ledger@preview`, install, enable the bundle, then reload the page.
 
 ### From a tarball
 
 ```sh
-dsh plugin --profile <profile> add ./dsh-experiment-ledger-0.35.0-preview.1.tgz
+dsh plugin --profile <profile> add ./dsh-experiment-ledger-0.35.0-preview.2.tgz
 ```
 
 ### From this folder (development)
@@ -52,7 +52,7 @@ From the workspace (local development):
 2. Pick the folder `dsh-experiment-ledger` (or paste its absolute path).
 3. **Install** and enable it; reload the page for the panel.
 
-Requires DeepSeek Harness `>= 0.2.2-rc.5`. No dependencies, no network, no telemetry. Full install, state locations, sharing, limits and troubleshooting: [docs/INSTALL.md](docs/INSTALL.md). Ready-to-use CSV/TSV/scripts/bundles: [samples/README.md](samples/README.md).
+Requires DeepSeek Harness `>= 0.2.2-rc.5`. No dependencies, no network, no telemetry. The panel's HTTP routes call the host's `connection.requestRejection(req)` before reading a request body, so DSH's Host/Origin fence and authenticated live-peer check apply. Full install, state locations, sharing, limits and troubleshooting: [docs/INSTALL.md](docs/INSTALL.md). Ready-to-use CSV/TSV/scripts/bundles: [samples/README.md](samples/README.md).
 
 ## Panel
 

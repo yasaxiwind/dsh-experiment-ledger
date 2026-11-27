@@ -1,10 +1,14 @@
-# dsh-experiment-ledger 0.35.0-preview.1
+# dsh-experiment-ledger 0.35.0-preview.2
 
-Preview release · 2026-11-25 · DeepSeek Harness `>= 0.2.2-rc.5`
+Preview security patch · 2026-11-27 · DeepSeek Harness `>= 0.2.2-rc.5`
 
 GitHub: https://github.com/yasaxiwind/dsh-experiment-ledger · Screenshots: `docs/screenshots/`
 
 This is the first public preview of a **local-first experiment ledger** for DeepSeek Harness. It records each run's parameters, metrics, artifacts, logs, environment and git state, then lets you compare, review, report and share the results. It is not a notebook or a data viewer; it is the missing results table.
+
+## Security fix in preview.2
+
+Every panel HTTP route now calls `ctx.connection.requestRejection(req)` before it reads a request body or runs an operation. This applies DSH's Host/Origin fence and requires DSH's authenticated live browser peer; an unauthenticated or cross-origin caller gets 401/403. The plugin's package-request header and same-origin check remain as defense in depth.
 
 ## What makes it different
 
@@ -22,13 +26,13 @@ This is the first public preview of a **local-first experiment ledger** for Deep
 dsh plugin --profile <profile> add dsh-experiment-ledger@preview
 ```
 
-If the registry returns `404`, the npm publish is still pending; use the GitHub Release tarball below.
+If the registry returns `404`, use the GitHub Release tarball below.
 
 In DSH Desktop: **Settings → Plugins → + Add plugin**, enter `dsh-experiment-ledger@preview`, install, enable, reload.
 
 ### From a tarball
 
-Extract it to a folder and add that folder as a plugin; or `dsh plugin --profile <profile> add ./dsh-experiment-ledger-0.35.0-preview.1.tgz`.
+Extract it to a folder and add that folder as a plugin; or `dsh plugin --profile <profile> add ./dsh-experiment-ledger-0.35.0-preview.2.tgz`.
 
 No runtime dependencies, no telemetry, no network.
 

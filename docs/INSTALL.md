@@ -1,6 +1,6 @@
 # Install and operations
 
-Preview version `0.35.0-preview.1`.
+Preview version `0.35.0-preview.2`.
 
 ## Requirements
 

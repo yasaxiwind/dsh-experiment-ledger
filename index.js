@@ -56,7 +56,7 @@ const INLINE_STDERR = 1000
 const BODY_LIMIT = 64 * 1024
 
 /** Host services this plugin needs. */
-export const inject = ['tools', 'webServer']
+export const inject = ['tools', 'webServer', 'connection']
 
 /**
  * Run git and return stdout.
@@ -3037,6 +3037,14 @@ class RequestError extends Error {
 function serve(ctx, method, run) {
   return async (req, res) => {
     try {
+      // Use the host's connection fence before reading the body: it rejects a
+      // cross-origin request and requires DSH's live authenticated browser peer.
+      const rejection = ctx.connection?.requestRejection?.(req)
+      if (rejection !== undefined) {
+        res.writeHead(rejection, { 'cache-control': 'no-store', 'content-length': '0' })
+        res.end()
+        return
+      }
       if (req.method !== method) {
         res.writeHead(405, { allow: method, 'content-length': '0' })
         res.end()

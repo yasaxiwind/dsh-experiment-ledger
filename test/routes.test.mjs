@@ -17,7 +17,7 @@ import { recordCandidate, listCandidates } from '../lib/recorder.js'
  * Mount the plugin and capture its routes.
  * @returns {Promise<{tools: Map<string, object>, routes: Map<string, Function>}>} the harness.
  */
-async function mount() {
+async function mount(options = {}) {
   const tools = new Map()
   const routes = new Map()
   const ctx = {
@@ -30,6 +30,7 @@ async function mount() {
         return () => {}
       },
     },
+    connection: options.connection ?? { requestRejection: () => undefined },
     logger: { warn: () => {} },
   }
   apply(ctx, { recorder: false, scheduler: false })
@@ -85,6 +86,13 @@ async function call(handler, method, url, body) {
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
+
+test('panel routes refuse a request rejected by the DSH connection admission', async () => {
+  const { routes } = await mount({ connection: { requestRejection: () => 403 } })
+  const base = '/plugin-experiment-ledger'
+  const response = await call(routes.get(`${base}/list`), 'GET', `${base}/list`)
+  assert.equal(response.status, 403)
+})
 
 test('panel routes list, promote and report', async () => {  const dir = await fsp.mkdtemp(join(tmpdir(), 'exp-routes-'))
   const { tools, routes } = await mount()

@@ -1,6 +1,6 @@
 {
   "name": "dsh-experiment-ledger",
-  "version": "0.35.0-preview.1",
+  "version": "0.35.0-preview.2",
   "description": "Local-first experiment ledger for DeepSeek Harness: record every run with its parameters, metrics and artifacts, then compare runs side by side.",
   "keywords": [
     "dsh",

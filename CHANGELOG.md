@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.35.0-preview.2
+
+- Security: every panel HTTP route now calls the DSH host's `connection.requestRejection(req)` before reading the body. Cross-origin requests and clients without DSH's authenticated live browser peer are rejected with 401/403; the plugin's own package-header and same-origin checks remain as defense in depth.
+- Added `connection` to the plugin's injected services and a route test that verifies a rejected admission returns 403.
+- Docs: record the DSH admission fence and the preview.2 release.
+
 ## 0.35.0-preview.1
 
 - First public preview: run ledger, reproducibility manifests, sweeps/schedules, comparison/CI, signed packages/decisions, trusted-key lifecycle, audit chain/anchors, dataset SQL metrics, dockable sidebar with folder picker/import/delete.
