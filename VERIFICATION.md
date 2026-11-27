@@ -28,8 +28,6 @@ Date: 2026-11-27 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `deskt
 | `POST …/import` with base64 bundle | 200, `experiments +1, runs +5`, temp upload path |
 | existing render | multi-compare, run detail, candidates, report |
 
-`roots.json` restored to only `scratch/exp-ledger-demo` after the live checks.
-
 ## What changed for the reported problems
 
 - **Import button did nothing**: it called `window.prompt`, which is unavailable/ignored in the desktop webview. It now opens an in-panel modal with a file picker and drag/drop; bytes are POSTed as base64 and imported host-side.
@@ -53,9 +51,21 @@ Date: 2026-11-27 · Host: DeepSeek Harness `0.2.2-rc.5` (Desktop, profile `deskt
 
 The clean-room harness uses an isolated `DSH_HOME` and packed files; it is not an actual second DSH profile install.
 
+## Repository hygiene
+
+Checked on 2026-11-27:
+
+- 57 tracked files, all expected plugin, docs, test, sample and workflow files.
+- No `.env`, `.npmrc`, private keys, logs, cookies, release tarballs, `.experiments`, `node_modules` or browser screenshots in the tree.
+- No tokens, passwords, local home/workspace absolute paths, usernames or conversation text in the current tree or the 9-commit history.
+- GitHub secret scanning reports 0 alerts.
+- Both release tarballs and both folder zips (preview.1 and preview.2) were downloaded and scanned; no sensitive strings found.
+- Screenshots use synthetic sample data; the DSH sidebar/session list, workspace label and user name were hidden.
+- `.gitignore` now also covers `.env*`, `.npmrc`, `*.pem`, `*.key`, `*.secret`, `*.log` and `cookies*.txt`.
+
 ## Not verified
 
-- **Visual browser check**: Playwright reaches the page but gets `dsh web authentication required`, so the docked layout, file picker and drag/drop were not visually exercised. Route + component smoke tests cover the logic. Docking uses DSH's `data-windows-titlebar`/`--dsh-windows-titlebar-height` (CSS fallback) for the top inset and mirrors `dsh-data-console` by setting `margin-right` on `_centerCol`; the class selector is DSH-internal and could change between DSH versions.
+- **Visual browser check**: release screenshots were captured from an authenticated Playwright session; the dock, import and conclusion panels were exercised, but the native folder picker and actual drag/drop upload were not. Docking uses DSH's `data-windows-titlebar`/`--dsh-windows-titlebar-height` (CSS fallback) for the top inset and mirrors `dsh-data-console` by setting `margin-right` on `_centerCol`; the class selector is DSH-internal and could change between DSH versions.
 - **Native folder picker**: uses the plugin's own directory browser (`/browse`), not an OS dialog; the path field accepts any absolute path.
 - Uploads are capped at **20 MB**; larger packages need the agent path (`exp_import path=…`).
 - `exp_open` needs a client mounted (footer action); a closed desktop window cannot be opened remotely.
